@@ -3,9 +3,17 @@ language: python
 python:
     - "2.7"
 
+addons:
+    apt:
+        packages:
+            - libhdf5-serial-dev
+            - libhdf5-openmpi-dev
+            - libopenmpi-dev
+            - openmpi-bin
+
 install:
     - pip install --upgrade pip setuptools wheel
-    - pip install mpi4py
+    - pip install -r requirements.txt
 
 script:
-    - python -c 'from mpi4py import MPI' 
+    - python -c 'from mpi4py import MPI'
