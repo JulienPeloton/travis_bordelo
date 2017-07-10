@@ -6,13 +6,11 @@ python:
 addons:
     apt:
         packages:
-            - libhdf5-serial-dev
-            - libopenmpi-dev
-            - openmpi-bin
+            - gfortran
 
 install:
     - pip install --upgrade pip setuptools wheel
     - pip install -r requirements.txt
 
 script:
-    - python -c 'from mpi4py import MPI'
+    - man gfortran
